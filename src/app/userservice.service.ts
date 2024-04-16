@@ -4,6 +4,7 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class UserserviceService {
+  now_login = ""
 
   users = [
     {
@@ -29,4 +30,5 @@ export class UserserviceService {
       password: p_pass
     })
   }
+
 }
