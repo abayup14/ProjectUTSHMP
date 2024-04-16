@@ -20,4 +20,13 @@ export class UserserviceService {
     },
   ]
   constructor() { }
+
+  addUser(p_username: string, p_namaLengkap: string, p_url: string, p_pass: string) {
+    this.users.push({
+      username: p_username,
+      fullname: p_namaLengkap,
+      url_foto: p_url,
+      password: p_pass
+    })
+  }
 }

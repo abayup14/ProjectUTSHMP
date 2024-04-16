@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { UserserviceService } from '../userservice.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-register',
@@ -11,13 +13,25 @@ export class RegisterPage implements OnInit {
   new_url = ""
   new_pass = ""
 
-  constructor() { }
+  constructor(private userservice: UserserviceService, private router: Router) { }
 
   ngOnInit() {
   }
 
   register() {
+    this.userservice.addUser(
+      this.new_username,
+      this.new_namaLengkap,
+      this.new_url,
+      this.new_pass
+    )
 
+    this.new_username = ""
+    this.new_namaLengkap = ""
+    this.new_url = ""
+    this.new_pass = ""
+
+    this.router.navigate(["/login"])
   }
 
 }
