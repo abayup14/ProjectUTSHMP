@@ -9,9 +9,14 @@ import { NewsService } from '../news.service';
 export class HomePage {
   news:any[] = []
 
+
   constructor(private newsService: NewsService) {}
 
   ngOnInit() {
     this.news = this.newsService.news
+  }
+
+  addLike(i: number) {
+    this.news[i].jumlah_like++
   }
 }
