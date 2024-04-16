@@ -23,8 +23,6 @@ export class LoginPage implements OnInit {
   ngOnInit() {
   }
 
-  public alertButtons = ['OK'];
-
   async login() {
     if (this.userservice.users.find(u => u.username === this.login_username && u.password === this.login_password)) {
       this.alert_message = 'Login success';
@@ -44,6 +42,7 @@ export class LoginPage implements OnInit {
     });
     await alert.present();
   }
+
   toReg() {
     this.router.navigate(["/register"])
   }
