@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { UserserviceService } from '../userservice.service';
+import { Router } from '@angular/router';
+import { AlertController } from '@ionic/angular';
 
 @Component({
   selector: 'app-login',
@@ -7,16 +10,38 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LoginPage implements OnInit {
 
-  login_username = ""
-  login_password = ""
+  login_username = '';
+  login_password = '';
+  alert_message = '';
 
-  constructor() { }
+  constructor(
+    private router: Router,
+    private userservice: UserserviceService,
+    private alertController: AlertController
+  ) { }
 
   ngOnInit() {
   }
 
-  login(){
+  public alertButtons = ['OK'];
 
+  async login() {
+    if (this.userservice.users.find(u => u.username === this.login_username && u.password === this.login_password)) {
+      this.alert_message = 'Login success';
+      this.router.navigate(['/home']);
+    } else {
+      this.alert_message = 'Username / Password not found';
+    }
+
+    await this.presentAlert();
   }
 
+  async presentAlert() {
+    const alert = await this.alertController.create({
+      header: 'Information',
+      message: this.alert_message,
+      buttons: ['OK']
+    });
+    await alert.present();
+  }
 }

@@ -17,8 +17,9 @@
         <ion-button id="btnLogin" (click)="login()">
           Login
         </ion-button>
-        <!-- <ion-alert trigger="btnLogin" header="New Pasta" message="Succes Login" [buttons]="alertButtons"></ion-alert> -->
       </ion-item>
     </ion-list>
   </div>
 </ion-content>
+
+<ion-alert header="Information" [message]="alert_message" [buttons]="alertButtons"></ion-alert>
