@@ -1,13 +1,36 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>register</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>Register</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
+  <!-- <ion-header collapse="condense">
     <ion-toolbar>
       <ion-title size="large">register</ion-title>
     </ion-toolbar>
-  </ion-header>
+  </ion-header> -->
+  <div id="container">
+    <ion-list>
+      <ion-item>
+        <ion-input labelPlacement="floating" placeholder="Masukkan Username" label="Username"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-input labelPlacement="floating" placeholder="Masukkan Nama Lengkap" label="Nama Lengkap"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-input labelPlacement="floating" placeholder="Masukkan URL Foto Anda" label="URL Foto"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-input labelPlacement="floating" type="password" placeholder="Masukkan Password" label="Password"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-button id="btnSubmit" (click)="register()">Register</ion-button>
+      </ion-item>
+    </ion-list>
+
+  </div>
 </ion-content>
