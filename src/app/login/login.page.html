@@ -1,13 +1,24 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>login</ion-title>
+    <ion-title>Login</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">login</ion-title>
-    </ion-toolbar>
-  </ion-header>
+  <div id="container">
+    <ion-list>
+      <ion-item>
+        <ion-input [(ngModel)]="login_username" label="Username" labelPlacement="floating"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-input [(ngModel)]="login_password" label="Password" labelPlacement="floating"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-button id="btnLogin" (click)="login()">
+          Login
+        </ion-button>
+        <!-- <ion-alert trigger="btnSubmit" header="New Pasta" message="Data Successfully Stored" [buttons]="alertButtons"></ion-alert> -->
+      </ion-item>
+    </ion-list>
+  </div>
 </ion-content>
