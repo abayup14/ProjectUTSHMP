@@ -14,7 +14,7 @@ export class NewsService {
       jumlah_like: 4,
       comment: ["Semoga PLN bisa cepat memperbaiki masalah ini. Kita semua butuh listrik untuk aktivitas sehari-hari.",
                 "Kok sering banget ya listrik padam di Surabaya Timur? Harusnya ada langkah konkret dari PLN untuk mengatasi ini.",
-                "Pernah dengar tentang rencana pemadaman listrik tapi nggak pernah dikabari jadinya repot. Komunikasi PLN harus lebih baik lagi."]
+                "Pernah dengar tentang rencana pemadaman listrik tapi nggak pernah dikabari jadinya repot. Komunikasi PLN harus lebih baik lagi."],
     },
     {
       judul: "",

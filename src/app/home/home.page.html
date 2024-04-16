@@ -1,20 +1,25 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>
-      Blank
-    </ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>Berita</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
-
   <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
+    <ion-card *ngFor="let item of news">
+      <ion-card-header>
+        <ion-card-title>{{ item.judul }}</ion-card-title>
+        <ion-img [src]="item.url_gambar"></ion-img>
+      </ion-card-header>
+      <ion-card-content>{{ item.deskripsi }}</ion-card-content>
+      <ion-row>
+        <ion-chip>
+          <ion-icon name=""></ion-icon>
+        </ion-chip>
+      </ion-row>
+    </ion-card>
   </div>
 </ion-content>

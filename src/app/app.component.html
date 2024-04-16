@@ -14,7 +14,7 @@
             <ion-label>Home</ion-label>
           </ion-item>
         </ion-menu-toggle>
-        <ion-menu-toggle>
+        <!-- <ion-menu-toggle>
           <ion-item routerLink="/list">
             <ion-icon name="list" slot="start"></ion-icon>
             <ion-label>List</ion-label>
@@ -25,11 +25,17 @@
             <ion-icon name="settings" slot="start"></ion-icon>
             <ion-label>Settings</ion-label>
           </ion-item>
+        </ion-menu-toggle> -->
+        <ion-menu-toggle>
+          <ion-item routerLink="/addnews">
+            <ion-icon slot="start" name="add"></ion-icon>
+            <ion-label>Tambah Berita</ion-label>
+          </ion-item>
         </ion-menu-toggle>
         <ion-menu-toggle>
-          <ion-item routerLink="/pasta">
-            <ion-icon slot="start" name="pasta"></ion-icon>
-            <ion-label>Pasta</ion-label>
+          <ion-item routerLink="/searchnews">
+            <ion-icon slot="start" name="search"></ion-icon>
+            <ion-label>Cari Berita</ion-label>
           </ion-item>
         </ion-menu-toggle>
       </ion-list>
@@ -41,13 +47,13 @@
         <ion-icon name="home"></ion-icon>
         <ion-label>Home</ion-label>
       </ion-tab-button>
-      <ion-tab-button tab="list">
-        <ion-icon name="list"></ion-icon>
-        <ion-label>List</ion-label>
+      <ion-tab-button tab="addnews">
+        <ion-icon name="add"></ion-icon>
+        <ion-label>Tambah Berita</ion-label>
       </ion-tab-button>
-      <ion-tab-button tab="setting">
-        <ion-icon name="settings"></ion-icon>
-        <ion-label>Settings</ion-label>
+      <ion-tab-button tab="searchnews">
+        <ion-icon name="search"></ion-icon>
+        <ion-label>Cari Berita</ion-label>
       </ion-tab-button>
     </ion-tab-bar>
   </ion-tabs>
