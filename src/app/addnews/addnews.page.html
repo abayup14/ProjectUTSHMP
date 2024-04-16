@@ -11,21 +11,32 @@
   <div id="container">
     <ion-list>
       <ion-item>
-        <ion-input label="Judul" placeholder="Masukkan Judul" labelPlacement="floating">
+        <ion-input [(ngModel)]="new_judul" label="Judul" placeholder="Masukkan Judul" labelPlacement="floating">
         </ion-input>
       </ion-item>
       <ion-item>
-        <ion-textarea label="Deskripsi" placeholder="Masukkan Deskripsi" labelPlacement="floating"></ion-textarea>
+        <ion-textarea [(ngModel)]="new_deskripsi" label="Deskripsi" placeholder="Masukkan Deskripsi" labelPlacement="floating"></ion-textarea>
       </ion-item>
       <ion-item>
-        <ion-input label="Gambar" placeholder="Masukkan Gambar" labelPlacement="floating"></ion-input>
-      </ion-item>
-      <ion-item></ion-item>
-      <ion-item>
-        <ion-select label="Pengaduan" labelPlacement="floating"></ion-select>
+        <ion-input [(ngModel)]="new_url" label="Gambar" placeholder="Masukkan URL Gambar" labelPlacement="floating"></ion-input>
       </ion-item>
       <ion-item>
-        <ion-select label="Tanggal" labelPlacement="floating"></ion-select>
+        <ion-select [(ngModel)]="new_tujuan" label="Tujuan Instansi" labelPlacement="floating">
+          <ion-select-option *ngFor="let tujuan of arr_tujuan">
+            {{tujuan}}
+          </ion-select-option>
+        </ion-select>
+      </ion-item>
+      <ion-item>
+        <ion-label>Tanggal</ion-label>
+        <ion-datetime [(ngModel)]="new_tanggal" display-format="DD MMM YYYY"></ion-datetime>
+      </ion-item>
+      <ion-item>
+        <ion-button id="btnAdd"
+          (click)="addNews()">
+          Add
+        </ion-button>
+        <ion-alert trigger="btnAdd" header="News Information" message="Data Successfully Stored" [buttons]="alertButtons"></ion-alert>
       </ion-item>
     </ion-list>
   </div>

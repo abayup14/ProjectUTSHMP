@@ -26,6 +26,7 @@ export class LoginPage implements OnInit {
   async login() {
     if (this.userservice.users.find(u => u.username === this.login_username && u.password === this.login_password)) {
       this.alert_message = 'Login success';
+      this.userservice.now_username_login = this.login_username
       this.router.navigate(['/home']);
     } else {
       this.alert_message = 'Username / Password not found';
