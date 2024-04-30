@@ -49,6 +49,14 @@ export class NewsService {
     }
   ]
 
+  sortByDate(ascending: boolean = false) {
+    this.news.sort((a, b) => {
+      const dateA = new Date(a.tanggal).getTime();
+      const dateB = new Date(b.tanggal).getTime();
+      return ascending ? dateA - dateB : dateB - dateA;
+    });
+  }
+
   addNews(n_username:string, n_judul:string, n_deskripsi:string, n_url_gambar:string, n_tujuan_instansi:string, n_tanggal:string, n_jumlah_like:number){
     this.news.push({username:n_username, judul:n_judul, deskripsi:n_deskripsi, url_gambar:n_url_gambar, tujuan_instansi:n_tujuan_instansi, tanggal:n_tanggal, jumlah_like:n_jumlah_like, comment:[""]})
   }
