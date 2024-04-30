@@ -26,7 +26,7 @@ export class AddnewsPage implements OnInit {
   public alertButtons = ['OK'];
 
   addNews() {
-    this.newsService.addNews(this.userService.now_username_login, this.new_judul, this.new_deskripsi, this.new_url, this.new_tujuan, this.new_tanggal, 0)
+    this.newsService.addNews(this.newsService.news.length+1, this.userService.now_username_login, this.new_judul, this.new_deskripsi, this.new_url, this.new_tujuan, this.new_tanggal, 0)
 
     this.new_judul = ""
     this.new_deskripsi = ""

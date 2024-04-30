@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NewsService } from '../news.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-searchnews',
@@ -11,7 +12,7 @@ export class SearchnewsPage implements OnInit {
   judul_berita = ""
   news:any[] = []
 
-  constructor(private newsService: NewsService) { }
+  constructor(private newsService: NewsService, private router: Router) { }
 
   ngOnInit() {
     this.news = [];
@@ -26,5 +27,4 @@ export class SearchnewsPage implements OnInit {
       this.news = [];
     }
   }
-
 }
