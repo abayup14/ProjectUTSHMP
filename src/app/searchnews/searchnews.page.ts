@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { NewsService } from '../news.service';
 
 @Component({
   selector: 'app-searchnews',
@@ -7,9 +8,23 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SearchnewsPage implements OnInit {
 
-  constructor() { }
+  judul_berita = ""
+  news:any[] = []
+
+  constructor(private newsService: NewsService) { }
 
   ngOnInit() {
+    this.news = [];
+  }
+
+  getBerita() {
+    if (this.judul_berita.trim() !== "") {
+      this.news = this.newsService.news.filter(newsItem =>
+        newsItem.judul.toLowerCase().includes(this.judul_berita.toLowerCase())
+      );
+    } else {
+      this.news = [];
+    }
   }
 
 }
