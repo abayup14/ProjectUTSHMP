@@ -15,7 +15,7 @@ export class UserserviceService {
     },
     {
       username: "abayu",
-      fullname: "Andreas Baayu",
+      fullname: "Andreas Bayu",
       url_foto: "",
       password: "a"
     },
