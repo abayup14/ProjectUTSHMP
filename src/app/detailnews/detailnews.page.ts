@@ -9,7 +9,7 @@ import { NewsService } from '../news.service';
 })
 export class DetailnewsPage implements OnInit {
   id = 0
-  news:any[] = []
+  // news:any[] = []
   item:any
 
   constructor(private route: ActivatedRoute, private newsService: NewsService) { }
@@ -17,9 +17,12 @@ export class DetailnewsPage implements OnInit {
   ngOnInit() {
     this.route.params.subscribe(params => {
       this.id = +params["id"]
-
     })
-
     this.item = this.newsService.getNewsByID(this.id)
+  }
+
+  addLike(id: number) {
+    this.item = this.newsService.getNewsByID(id)
+    this.item.jumlah_like++
   }
 }
