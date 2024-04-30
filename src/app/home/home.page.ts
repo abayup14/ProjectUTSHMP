@@ -10,6 +10,7 @@ import { UserserviceService } from '../userservice.service';
 export class HomePage {
   news:any[] = []
   now_login_username = ""
+  item:any
 
   constructor(private newsService: NewsService, private userService: UserserviceService) {}
 
@@ -19,7 +20,12 @@ export class HomePage {
     this.now_login_username = this.userService.now_username_login
   }
 
-  addLike(i: number) {
-    this.news[i].jumlah_like++
+  addLike(id: number) {
+    this.item = this.newsService.getNewsByID(id)
+    this.item.jumlah_like++
   }
+
+  // getNewsByID(id: number) {
+  //   return this.news.find(brg => brg.id == id)
+  // }
 }

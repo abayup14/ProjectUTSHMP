@@ -60,6 +60,10 @@ export class NewsService {
     });
   }
 
+  getNewsByID(id: number) {
+    return this.news.find(item => item.id === id)
+  }
+
   addNews(n_id:number, n_username:string, n_judul:string, n_deskripsi:string, n_url_gambar:string, n_tujuan_instansi:string, n_tanggal:string, n_jumlah_like:number){
     this.news.push({id:n_id, username:n_username, judul:n_judul, deskripsi:n_deskripsi, url_gambar:n_url_gambar, tujuan_instansi:n_tujuan_instansi, tanggal:n_tanggal, jumlah_like:n_jumlah_like, comment:[""]})
   }

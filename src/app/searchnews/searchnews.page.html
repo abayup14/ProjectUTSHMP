@@ -12,7 +12,7 @@
     <ion-item>
       <ion-input labelPlacement="floating" placeholder="Masukkan Judul Berita" label="Search Judul Berita" [(ngModel)]="judul_berita" (keyup)="getBerita()"></ion-input>
     </ion-item>
-    <ion-card *ngFor="let item of news; let i=index">
+    <ion-card *ngFor="let item of news;">
       <ion-card-header routerLink="/detailnews/{{ item.id }}">
         <ion-card-title style="text-align: center; font-weight: bold;">{{ item.judul }}</ion-card-title>
       </ion-card-header>

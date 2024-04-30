@@ -9,7 +9,7 @@
 
 <ion-content [fullscreen]="true">
   <ion-title>Selamat Datang, {{ now_login_username }}</ion-title>
-  <ion-card *ngFor="let item of news; let i=index">
+  <ion-card *ngFor="let item of news;">
     <ion-card-header routerLink="/detailnews/{{ item.id }}">
       <ion-card-title style="text-align: center; font-weight: bold;">{{ item.judul }}</ion-card-title>
       <ion-img [src]="item.url_gambar"></ion-img>
@@ -25,7 +25,7 @@
           <ion-icon name="chatbox-sharp"></ion-icon>
           <ion-label>{{ item.comment.length }}</ion-label>
         </ion-chip>
-        <ion-chip (click)="addLike(i)">
+        <ion-chip (click)="addLike(item.id)">
           <ion-icon name="thumbs-up-sharp"></ion-icon>
           <ion-label>{{ item.jumlah_like }}</ion-label>
         </ion-chip>

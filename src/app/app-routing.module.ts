@@ -24,7 +24,7 @@ const routes: Routes = [
     loadChildren: () => import('./addnews/addnews.module').then( m => m.AddnewsPageModule)
   },
   {
-    path: 'detailnews/:index',
+    path: 'detailnews/:id',
     loadChildren: () => import('./detailnews/detailnews.module').then( m => m.DetailnewsPageModule)
   },
   {
