@@ -36,7 +36,7 @@ export class NewsService {
       username: "steven",
       judul: "Air Tiba-tiba Jadi Keruh dan Bau Tidak Sedap di Surabaya Barat",
       deskripsi: "Hari ini, saya dan warga kampung saya dikejutkan dengan kondisi air keruh dan bau tidak sedap yang keluar dari keran. Awalnya, saya tidak menyadari masalah ini sampai saya hendak mengisi gelas dengan air dari keran, dan airnya terlihat sangat keruh dan berwarna tidak biasa. Kondisi ini sangat mengganggu kegiatan sehari-hari dan menimbulkan kekhawatiran akan kualitas air yang kami gunakan.",
-      url_gambar: "https://centralnews.id/wp-content/uploads/2021/11/IMG-20211113-WA0000.jpg",
+      url_gambar: "https://asset-2.tstatic.net/aceh/foto/bank/images/air-pdam-keruh-pelanggan-kecewa.jpg",
       tujuan_instansi: "PDAM",
       tanggal: new Date(2024, 4, 15).toISOString(),
       jumlah_like: 3,
