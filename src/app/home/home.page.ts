@@ -15,7 +15,7 @@ export class HomePage {
   constructor(private newsService: NewsService, private userService: UserserviceService) {}
 
   ngOnInit() {
-    // this.newsService.sortByDate(false)
+    this.newsService.sortByDate(false)
     this.news = this.newsService.news
     this.now_login_username = this.userService.now_username_login
   }
@@ -24,8 +24,4 @@ export class HomePage {
     this.item = this.newsService.getNewsByID(id)
     this.item.jumlah_like++
   }
-
-  // getNewsByID(id: number) {
-  //   return this.news.find(brg => brg.id == id)
-  // }
 }

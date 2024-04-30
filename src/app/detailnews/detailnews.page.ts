@@ -15,12 +15,11 @@ export class DetailnewsPage implements OnInit {
   constructor(private route: ActivatedRoute, private newsService: NewsService) { }
 
   ngOnInit() {
-    this.news = this.newsService.news
     this.route.params.subscribe(params => {
-      this.id = params["id"]
-      this.item = this.newsService.getNewsByID(this.id)
+      this.id = +params["id"]
+
     })
 
-    // this.item = this.newsService.news[this.index]
+    this.item = this.newsService.getNewsByID(this.id)
   }
 }
