@@ -34,6 +34,7 @@ export class AddnewsPage implements OnInit {
     this.new_tujuan = "Tidak tahu"
     this.new_tanggal = new Date().toISOString()
 
+    this.newsService.sortByDate(false)
     this.router.navigate(['/home'])
   }
 

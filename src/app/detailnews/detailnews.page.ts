@@ -16,7 +16,7 @@ export class DetailnewsPage implements OnInit {
 
   ngOnInit() {
     this.route.params.subscribe(params => {
-      this.id = +params["id"]
+      this.id = params["id"] * 1
     })
     this.item = this.newsService.getNewsByID(this.id)
   }
