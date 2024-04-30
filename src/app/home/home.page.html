@@ -10,7 +10,7 @@
 <ion-content [fullscreen]="true">
   <ion-title>Selamat Datang, {{ now_login_username }}</ion-title>
   <ion-card *ngFor="let item of news; let i=index">
-    <ion-card-header routerLink="/detailnews/{{ item.id - 1}}">
+    <ion-card-header routerLink="/detailnews/{{ item.id }}">
       <ion-card-title style="text-align: center; font-weight: bold;">{{ item.judul }}</ion-card-title>
       <ion-img [src]="item.url_gambar"></ion-img>
     </ion-card-header>

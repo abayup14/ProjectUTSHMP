@@ -9,7 +9,8 @@ import { NewsService } from '../news.service';
 })
 export class DetailnewsPage implements OnInit {
   index = 0
-  news:any[] = []
+  // news:any[] = []
+  item:any
 
   constructor(private route: ActivatedRoute, private newsService: NewsService) { }
 
@@ -17,7 +18,12 @@ export class DetailnewsPage implements OnInit {
     this.route.params.subscribe(params => {
       this.index = params["index"]
     })
-    this.news = this.newsService.news
+    this.item = this.getNewsByID(this.index)
+    // this.item = this.newsService.news[this.index]
+  }
+
+  getNewsByID(id: number) {
+    return this.newsService.news.find(item => item.id === id)
   }
 
 }
