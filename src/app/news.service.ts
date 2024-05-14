@@ -54,8 +54,8 @@ export class NewsService {
 
   sortByDate(ascending: boolean = false) {
     this.news.sort((a, b) => {
-      const dateA = new Date(a.tanggal).getDate();
-      const dateB = new Date(b.tanggal).getDate();
+      const dateA = new Date(a.tanggal).getTime();
+      const dateB = new Date(b.tanggal).getTime();
       return ascending ? dateA - dateB : dateB - dateA;
     });
   }
